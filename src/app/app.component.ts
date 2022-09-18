@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'my-recipe-app-Udemy';
+  title: string = 'my-recipe-app-Udemy';
+  showRecipe: boolean = true;
 }

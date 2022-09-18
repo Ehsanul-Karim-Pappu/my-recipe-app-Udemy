@@ -5,14 +5,14 @@
 </div>
 <hr>
 <div class="row">
-  <div class="col-xs-12">
+  <div class="list-group col-xs-12">
     <a
       href="#"
       class="list-group-item clearfix"
       *ngFor="let recipe of recipes">
       <div class="float-start">
         <h4 class="list-group-item-action">{{ recipe.name }}</h4>
-        <p class="list-group-item">{{ recipe.description }}</p>
+        <p class="list-group-item-action">{{ recipe.description }}</p>
       </div>
       <span class="float-end">
         <img
