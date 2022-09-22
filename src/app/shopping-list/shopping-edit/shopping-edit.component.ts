@@ -14,18 +14,18 @@ export class ShoppingEditComponent implements OnInit {
   nameInput!: {
     nativeElement: {value: string}
   };
-  ingredient = new Ingredient('', 0);
   amountInput!: number;
-
   constructor() { }
 
   ngOnInit(): void {
   }
 
+
   onAddIngredient() {
-    this.ingredient.name = this.nameInput.nativeElement.value;
-    this.ingredient.amount = this.amountInput;
-    this.onAdded.emit(this.ingredient);
-    console.log('event emitted')
+    let name = this.nameInput.nativeElement.value;
+    let amount = this.amountInput;
+    let ingredient = new Ingredient(name, amount);
+    this.onAdded.emit(ingredient);
+    console.log('event emitted');
   }
 }
