@@ -1,7 +1,7 @@
 <a
   href="#"
   class="list-group-item clearfix"
-  (click)="recipeItemClicked.emit(recipe)">
+  (click)="recipeService.recipeItemClicked = recipe">
   <div class="float-start">
     <h4 class="list-group-item-action">{{ recipe.name }}</h4>
     <p class="list-group-item-action">{{ recipe.description }}</p>
