@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {ShoppingListService} from "./services/shopping-list.service";
+import {RecipeService} from "./services/recipe.service";
 
 @Component({
   selector: 'app-root',
@@ -7,9 +9,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title: string = 'my-recipe-app-Udemy';
-  loadedFeature: string = 'recipe';
 
-  onNavigate (feature: string) {
-    this.loadedFeature = feature;
-  }
+  constructor(public shoppingListService: ShoppingListService,
+              public recipeService: RecipeService) { }
+
 }

@@ -1,4 +1,6 @@
-import {Component, EventEmitter, Output} from "@angular/core";
+import {Component} from "@angular/core";
+import {ShoppingListService} from "../services/shopping-list.service";
+import {RecipeService} from "../services/recipe.service";
 
 @Component({
   selector: 'app-header',
@@ -6,10 +8,13 @@ import {Component, EventEmitter, Output} from "@angular/core";
 })
 
 export class HeaderComponent {
-  @Output() featureSelected: EventEmitter<string> = new EventEmitter<string>();
   collapsed = true;
 
+  constructor(private shoppingListService: ShoppingListService,
+              private recipeService: RecipeService) { }
+
   onSelect(feature: string) {
-    this.featureSelected.emit(feature);
+    this.shoppingListService.loadedFeature = feature;
+    this.recipeService.loadedFeature = feature;
   }
 }
