@@ -7,7 +7,7 @@ import {Recipe} from "./recipe.model";
   styleUrls: ['./recipes.component.css']
 })
 export class RecipesComponent implements OnInit {
-  recipeClicked: Recipe = new Recipe('','','');
+  recipeClicked!: Recipe;
 
   constructor() { }
 

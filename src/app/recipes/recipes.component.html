@@ -5,6 +5,10 @@
   </div>
   <div class="col-md-7">
     <app-recipe-detail
+      *ngIf="recipeClicked else infoText"
       [recipe]="recipeClicked"></app-recipe-detail>
+    <ng-template #infoText>
+      <p>Please select a Recipe!</p>
+    </ng-template>
   </div>
 </div>
