@@ -13,9 +13,16 @@ export class ShoppingListService {
 
   constructor() { }
 
-  onAddIngredient(name: string, amount: number) {
-    let ingred = new Ingredient(name, amount);
-    this.ingredients.push(ingred);
+  onAddIngredient(ingredient: Ingredient) {
+    let flag = true;
+    for (const ingredientEl of this.ingredients) {
+      if (ingredientEl.name === ingredient.name) {
+        ingredientEl.amount += ingredient.amount;
+        flag = false;
+      }
+    }
+    if (flag)
+      this.ingredients.push(ingredient);
   }
 
 }

@@ -18,7 +18,7 @@ export class RecipeDetailComponent implements OnInit {
 
   addToShoppingList(ingredients: Ingredient[]) {
     for (const ingredient of ingredients) {
-      this.shoppingListService.ingredients.push(ingredient);
+      this.shoppingListService.onAddIngredient(ingredient);
     }
   }
 
